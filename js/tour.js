@@ -25,7 +25,7 @@ AFRAME.registerComponent("tour", {
     createPlace: function() {
       const details = {
         garden: {
-          position: { x: 10, y: 34, z: -100 },
+          position: { x: 60, y: 34, z: -100 },
           rotation: { x: 0, y: 0, z: 0 },
           src: "./assets/thumbnails/garden.webp",
           title: "Garden",
@@ -39,7 +39,7 @@ AFRAME.registerComponent("tour", {
           id: "main_gate"
         },
         home: {
-          position: { x: -9, y: 34, z: -100 },
+          position: { x: -60, y: 34, z: -100 },
           rotation: { x: 0, y: 0, z: 0 },
           src: "./assets/thumbnails/home.jpeg",
           title: "My Home",
@@ -65,7 +65,7 @@ AFRAME.registerComponent("tour", {
       entityEl.setAttribute("id", id);
       entityEl.setAttribute("geometry", {
         primitive: "circle",
-        radius: 3
+        radius: 20
       });
       entityEl.setAttribute("position", item.position);
       entityEl.setAttribute("rotation", item.rotation);
@@ -79,16 +79,16 @@ AFRAME.registerComponent("tour", {
       entityEl.setAttribute("text", {
         font: "exo2bold",
         align: "center",
-        width: 50,
+        width: 200,
         color: "red",
         value: item.title
       });
-      const position = { x: 0, y: -4, z: 0 };
+      const position = { x: 0, y: -30, z: 0 };
       entityEl.setAttribute("position", position);
   
       if (item.title === "Main Gate") {
         entityEl.setAttribute("rotation", { x: 180, y: 180, z: 180 });
-        entityEl.setAttribute("position", { x: 0, y: 4, z: 0 });
+        entityEl.setAttribute("position", { x: 0, y: -30, z: 0 });
       }
       entityEl.setAttribute("visible", true);
       return entityEl;
